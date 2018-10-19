@@ -1,11 +1,13 @@
 from flask import Flask, redirect
 from app.views.product import product
+from app.views.user import user
 from flasgger import Swagger
 
 
 app = Flask(__name__)
 
 app.register_blueprint(product)
+app.register_blueprint(user)
 
 # Define a swagger template
 template = {
