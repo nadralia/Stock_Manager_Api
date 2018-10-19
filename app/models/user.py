@@ -35,13 +35,13 @@ users = [
 ]
 
 class User(Resource):
-    def get(self, name):
+    def get_single_user(self, name):
         for user in users:
             if(name == user["name"]):
                 return user, 200
         return "User not found", 404
 
-    def post(self, name):
+    def add_user(self, name):
         parser = reqparse.RequestParser()
         parser.add_argument("age")
         parser.add_argument("occupation")
@@ -63,7 +63,7 @@ class User(Resource):
         users.append(user)
         return user, 201
 
-    def put(self, name):
+    def edit_user(self, name):
         parser = reqparse.RequestParser()
         parser.add_argument("age")
         parser.add_argument("occupation")
@@ -87,7 +87,7 @@ class User(Resource):
         users.append(user)
         return user, 201
 
-    def delete(self, name):
+    def remove_user(self, name):
         global users
         users = [user for user in users if user["name"] != name]
         return "{} is deleted.".format(name), 200
