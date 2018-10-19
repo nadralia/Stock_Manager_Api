@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.com/nadralia/Stock_Manager_Api.svg?branch=develop)](https://travis-ci.com/nadralia/Stock_Manager_Api)
 # Stock_Manager_Api
  Store Manager is a web application that helps store owners manage sales and product inventory records. This application is meant for use in a single store.
 ## Features 
