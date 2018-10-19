@@ -7,12 +7,12 @@ class TestSaleViews(unittest.TestCase):
     def setUp(self):
         self.client = app.test_client
 
-    def test_add_a_sale(self):
+    def test_create_a_sale(self):
         # Tests that a sale record is created
         post_data = ({
-            "prod_name": "Brown shirt",
+            "product_name": "Brown shirt",
             "price": "88000",
-            "prod_quantity": "6"
+            "product_quantity": "6"
         })
         response = self.client().post('/api/v1/sales',
                                       content_type='application/json',
