@@ -22,9 +22,9 @@ def add_sale():
             record_id += 1
             total = int(data['price']) * int(data['prod_quantity'])
             date_added = datetime.now()
-            new_record = Sale(record_id, data['product_name'],
+            new_record = Sale(record_id, data['prod_name'],
                                     data['price'],
-                                    data['product_quantity'],
+                                    data['prod_quantity'],
                                     str(total), date_added)
             sales.append(new_record)
             return jsonify({"message": "record created successfully"}), 201
