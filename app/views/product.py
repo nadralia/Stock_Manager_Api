@@ -38,7 +38,7 @@ def fetch_products():
     return jsonify({"Products": Products}), 200
 
 
-@product.route('/api/v1/products/<int:product_id>', methods=['GET'])
+@product.route('/api/v1/products/<int:prod_id>', methods=['GET'])
 @swag_from('../api/v1/products/fetch_single_product.yml')
 def fetch_single_product(prod_id):
     fetched_product = []
