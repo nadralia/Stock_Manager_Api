@@ -1,5 +1,5 @@
 import unittest
-from app.models.Sale import Sale
+from app.models.sale import Sale
 
 
 class TestSale(unittest.TestCase):
