@@ -2,6 +2,8 @@
 
 ### Python ###
 # Byte-compiled / optimized / DLL files
+storeapi
+.vscode/
 __pycache__/
 *.py[cod]
 *$py.class
