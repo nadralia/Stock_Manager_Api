@@ -40,7 +40,7 @@ class TestProduct(unittest.TestCase):
     def test_product_name(self):
         # Tests that the product name is equal to the given product name
         self.assertEqual(self.product.prod_name, "Slim Mom Jeans")
-        self.product.product_name = "covert jeans"
+        self.product.prod_name = "covert jeans"
         self.assertEqual(self.product.prod_name, "covert jeans",
                          "product name is now covert jeans")
 

@@ -1,6 +1,6 @@
 import unittest
 from app import app
-from flask import json
+import json
 
 
 class TestSaleViews(unittest.TestCase):

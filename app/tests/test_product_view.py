@@ -12,7 +12,8 @@ class TestProductViews(unittest.TestCase):
         post_data = ({
             "prod_name": "Skinned Jean",
             "unit_price": "50000",
-            "product_quantity": "44"
+            "prod_quantity": "44",
+            "prod_category": "Men Jean"
         })
         response = self.client().post('/api/v1/products',
                                       content_type='application/json',
