@@ -1,8 +1,8 @@
-[![Build Status](https://travis-ci.com/nadralia/Stock_Manager_Api.svg?branch=develop)](https://travis-ci.com/nadralia/Stock_Manager_Api)
-<a href="https://codeclimate.com/github/nadralia/Stock_Manager_Api/maintainability"><img src="https://api.codeclimate.com/v1/badges/4649fec978eb24a0c50e/maintainability" /></a>
-
-<a href="https://codeclimate.com/github/nadralia/Stock_Manager_Api/test_coverage"><img src="https://api.codeclimate.com/v1/badges/4649fec978eb24a0c50e/test_coverage" /></a>
-
+[![Build Status](https://travis-ci.com/nadralia/Stock_Manager_Api.svg?branch=develop)]
+(https://travis-ci.com/nadralia/Stock_Manager_Api)
+[![Coverage Status](https://coveralls.io/repos/github/nadralia/Stock_Manager_Api/badge.svg?branch=develop)](https://coveralls.io/github/nadralia/Stock_Manager_Api?branch=develop)
+[![Maintainability](https://api.codeclimate.com/v1/badges/4649fec978eb24a0c50e/maintainability)](https://codeclimate.com/github/nadralia/Stock_Manager_Api/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/4649fec978eb24a0c50e/test_coverage)](https://codeclimate.com/github/nadralia/Stock_Manager_Api/test_coverage)
 # Stock_Manager_Api
  Store Manager is a web application that helps store owners manage sales and product inventory records. This application is meant for use in a single store.
 ## Features 
