@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.com/nadralia/Stock_Manager_Api.svg?branch=develop)](https://travis-ci.com/nadralia/Stock_Manager_Api)
+<a href="https://codeclimate.com/github/nadralia/Stock_Manager_Api/maintainability"><img src="https://api.codeclimate.com/v1/badges/4649fec978eb24a0c50e/maintainability" /></a>
 # Stock_Manager_Api
  Store Manager is a web application that helps store owners manage sales and product inventory records. This application is meant for use in a single store.
 ## Features 
@@ -53,7 +54,8 @@ $ python run.py
 Test your setup using [postman](www.getpostman.com) REST-client
 
 **Running tests**
-
-
+* Install pytest 
+* navigate to project root then app/tests
 
 ### Link to Store Manager on Heroku
+### [StoreManager](https://adralia-store-api.herokuapp.com/)
