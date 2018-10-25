@@ -1,20 +1,20 @@
 class Sale:
-    def __init__(self, sale_id, product_name, price, product_quantity,
+    def __init__(self, sale_id, prod_name, unit_price, prod_quantity,
                  total_amount, date_added):
         self.sale_id = sale_id
-        self.product_name = product_name
-        self.price = price
-        self.product_quantity = product_quantity
+        self.prod_name = prod_name
+        self.unit_price = unit_price
+        self.prod_quantity = prod_quantity
         self.total_amount = total_amount
         self.date_added = date_added
 
-    def get_dict(self):
-        dict = {
+    def get_sale_dictionary(self):
+        return {
             "sale_id": self.sale_id,
-            "product_name": self.product_name,
-            "price": self.price,
-            "product_quantity": self.product_quantity,
+            "prod_name": self.prod_name,
+            "unit_price": self.unit_price,
+            "prod_quantity": self.prod_quantity,
             "total_amount": self.total_amount,
             "date_added": self.date_added
         }
-        return dict
+         

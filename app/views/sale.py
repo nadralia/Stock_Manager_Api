@@ -2,7 +2,6 @@ from flask import Blueprint, jsonify, request, make_response
 from app.models.sale import Sale
 from app.validation import Validate
 from datetime import datetime
-from flasgger import swag_from
 
 sale = Blueprint('sale', __name__)
 
@@ -10,7 +9,6 @@ sales = list()
 
 
 @sale.route('/api/v1/sales', methods=['POST'])
-@swag_from('../api/v1/sales/create_sale_record.yml')
 def create_sale_record():
     """ Creates a new sale record"""
     data = request.get_json()
@@ -20,11 +18,11 @@ def create_sale_record():
         if valid == "Valid":
             record_id = len(sales)
             record_id += 1
-            total = int(data['price']) * int(data['product_quantity'])
+            total = int(data['unit_price']) * int(data['prod_quantity'])
             date_added = datetime.now()
-            new_record = Sale(record_id, data['product_name'],
-                                    data['price'],
-                                    data['product_quantity'],
+            new_record = Sale(record_id, data['prod_name'],
+                                    data['unit_price'],
+                                    data['prod_quantity'],
                                     str(total), date_added)
             sales.append(new_record)
             return jsonify({"message": "record created successfully"}), 201
@@ -34,19 +32,17 @@ def create_sale_record():
 
 
 @sale.route('/api/v1/sales', methods=['GET'])
-@swag_from('../api/v1/sales/fetch_all_sales.yml')
 def fetch_sale_orders():
     """This endpoint fetches all sale records"""
-    Sales = [record.get_dict() for record in sales]
+    Sales = [record.get_sale_dictionary() for record in sales]
     return jsonify({"All Sales": Sales}), 200
 
 
 @sale.route('/api/v1/sales/<int:sale_id>', methods=['GET'])
-@swag_from('../api/v1/sales/fetch_single_sale.yml')
 def get_single_record(sale_id):
     single_record = []
     if sale_id != 0 and sale_id <= len(sales):
         record = sales[sale_id - 1]
-        single_record.append(record.get_dict())
+        single_record.append(record.get_sale_dictionary())
         return jsonify({"Record": single_record}), 200
     return jsonify({"message": "Index out of range!"}), 400
