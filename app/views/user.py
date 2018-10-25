@@ -1,7 +1,6 @@
 from flask import request, jsonify, Blueprint, make_response
 from app.models.user import Attendant
 from werkzeug.security import generate_password_hash
-from flasgger import swag_from
 from app.validation import Validate
 import datetime
 
@@ -10,7 +9,6 @@ user = Blueprint('user', __name__)
 users = []
 
 @user.route('/api/v1/users', methods=['POST'])
-@swag_from('../api/v1/users/add_user.yml')
 def register_user():
     """ registers a user"""
     data = request.get_json()
@@ -32,3 +30,9 @@ def register_user():
         return make_response(is_valid)
     except KeyError:
         return "Invalid key fields"
+
+@user.route('/api/v1/users', methods=['GET'])
+def fetch_users():
+    """Fetches all the available users"""
+    Users = [user.create_user_dictionary() for user in users]
+    return jsonify({"Users": Users}), 200

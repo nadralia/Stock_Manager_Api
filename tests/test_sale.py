@@ -4,7 +4,7 @@ from app.models.sale import Sale
 
 class TestSale(unittest.TestCase):
     def setUp(self):
-        # Creates an instance of the SaleRecord class
+        # Creates an instance of the Sale class
         self.new_record = Sale(5, "floral blouse", "75000", "20",
                                      "150000", "Tue, 16 Oct 2018 18:42:38 GMT")
         return self.new_record
@@ -27,40 +27,40 @@ class TestSale(unittest.TestCase):
 
     def test_sold_product_name(self):
         # Tests the existence of the product name
-        self.assertEqual(self.new_record.product_name, "floral blouse")
-        self.assertNotEqual(self.new_record.product_name, "skirt")
+        self.assertEqual(self.new_record.prod_name, "floral blouse")
+        self.assertNotEqual(self.new_record.prod_name, "skirt")
 
     def test_sold_product_datatype(self):
         # Tests the datatype of the sold product name
-        self.assertNotIsInstance(self.new_record.product_name, int)
-        self.assertNotIsInstance(self.new_record.product_name, float)
-        self.assertIsInstance(self.new_record.product_name, str)
+        self.assertNotIsInstance(self.new_record.prod_name, int)
+        self.assertNotIsInstance(self.new_record.prod_name, float)
+        self.assertIsInstance(self.new_record.prod_name, str)
 
     def test_sold_product_price(self):
         # Tests the given price
-        self.assertEqual(self.new_record.price, "75000")
-        self.new_record.price = "50000"
-        self.assertEqual(self.new_record.price, "50000",
+        self.assertEqual(self.new_record.unit_price, "75000")
+        self.new_record.unit_price = "50000"
+        self.assertEqual(self.new_record.unit_price, "50000",
                          "Price has now changed to 50000")
 
     def test_sold_product_price_datatype(self):
         # Tests the datatype of the selling price
-        self.assertNotIsInstance(self.new_record.price, int)
-        self.assertNotIsInstance(self.new_record.price, float)
-        self.assertIsInstance(self.new_record.price, str)
+        self.assertNotIsInstance(self.new_record.unit_price, int)
+        self.assertNotIsInstance(self.new_record.unit_price, float)
+        self.assertIsInstance(self.new_record.unit_price, str)
 
     def test_sold_product_quantity(self):
         # Tests that the product_quantity is equal to the given quantity
-        self.assertEqual(self.new_record.product_quantity, "20")
-        self.assertNotEqual(self.new_record.product_quantity, "23")
-        self.assertNotEqual(self.new_record.product_quantity, "32")
+        self.assertEqual(self.new_record.prod_quantity, "20")
+        self.assertNotEqual(self.new_record.prod_quantity, "23")
+        self.assertNotEqual(self.new_record.prod_quantity, "32")
 
     def test_sold_product_quantity_datatype(self):
         # Tests the datatype of the product quantity
-        self.assertNotIsInstance(self.new_record.product_quantity, int)
-        self.assertNotIsInstance(self.new_record.product_quantity, float)
-        self.assertNotIsInstance(self.new_record.product_quantity, list)
-        self.assertIsInstance(self.new_record.product_quantity, str)
+        self.assertNotIsInstance(self.new_record.prod_quantity, int)
+        self.assertNotIsInstance(self.new_record.prod_quantity, float)
+        self.assertNotIsInstance(self.new_record.prod_quantity, list)
+        self.assertIsInstance(self.new_record.prod_quantity, str)
 
     def test_total_amount(self):
         # Tests that the total amount is the product of price and quantity

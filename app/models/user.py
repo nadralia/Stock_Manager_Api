@@ -18,3 +18,6 @@ class Attendant(StoreEmployee):
         super().__init__(employee_id, employee_name, email, gender)
         self.attendantUser_name = attendantUser_name
         self.attendant_password = attendant_password
+
+    def create_user_dictionary(self):
+        pass

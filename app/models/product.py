@@ -8,7 +8,8 @@ class Product:
         self.prod_name = prod_name
         self.date_added = date_added
 
-    def serialize(self):
+    #method for returning a product dictionary
+    def get_product_dictionary(self):
         return {
             "prod_id": self.prod_id,
             "prod_name": self.prod_name,
