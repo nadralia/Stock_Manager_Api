@@ -8,11 +8,13 @@ class Validate:
         # Validates the product fields
         try:
             if data['prod_name'] == "":
-                return "Product name is missing"
+                return "Enter Product name"
             if not data['prod_name']:
-                return "Product name is missing"
+                return "Enter Product name"
             if len(data['prod_name']) < 4:
                 return "Product name should be more than 4 characters long"
+            if not re.match(r"^[a-zA-Z0-9 _]*$", data['prod_name']):
+                return "productname should contain alphanumerics only", 400
             if not re.match(r"^([a-zA-Z]+\s)*[a-zA-Z]+$", data['prod_name']):
                 return "Product name must have no white spaces", 400
             if data["prod_quantity"] == "":
@@ -21,7 +23,6 @@ class Validate:
                 return "Enter the product quantity", 400
             if not re.match(r"^[0-9_]*$", data['prod_quantity']):
                 return "quantity should contain integers only", 400
-
             if data['unit_price'] == "":
                 return "Enter the unit price of the product", 400
             if not re.match(r"^[0-9_]*$", data['unit_price']):
